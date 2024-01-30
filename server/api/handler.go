@@ -28,14 +28,14 @@ func NewTestHandler(router *mux.Router, api *pluginapi.Client) *TestHandler {
 }
 
 type TestResponse struct {
-	userID string
+	UserID string
 }
 
 func (h *TestHandler) getTest(c *Context, w http.ResponseWriter, r *http.Request) {
 	userID := r.Header.Get("Mattermost-User-ID")
 
 	testResponse := TestResponse{
-		userID: userID,
+		UserID: userID,
 	}
 
 	fmt.Println("userID", userID)
@@ -46,7 +46,7 @@ func (h *TestHandler) getTest(c *Context, w http.ResponseWriter, r *http.Request
 func (h *TestHandler) postTest(c *Context, w http.ResponseWriter, r *http.Request) {
 	userID := r.Header.Get("Mattermost-User-ID")
 	testResponse := TestResponse{
-		userID: userID,
+		UserID: userID,
 	}
 
 	fmt.Println("userID", userID)
